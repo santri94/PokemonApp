@@ -19,12 +19,7 @@
             <RowDefinition Height="150" />
             <RowDefinition Height="150" />
         </Grid.RowDefinitions>
-
-
-
-        <Image Width="100" Height="100" Grid.Column="1" Grid.Row="0" Source="https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/bulbasaur.png"></Image>
-        <Image x:Name="SecondImage" Width="100" Height="100" Grid.Column="3" Grid.Row="0"></Image>
-        <Button Width="100" Height="50" Grid.Column="1" Grid.Row="1" Click="Button_Click">Test</Button>
+        <Button Width="100" Height="50" Grid.Column="1" Click="Button_Click" Grid.ColumnSpan="3" Margin="152,0,158,100">refresh</Button>
 
 
 

@@ -29,22 +29,14 @@ namespace PokemonApp
             //AddPokemons();
         }
 
-        public void AddPokemons()
-        {
-            int counter = 1;
-            string href;
-
-            var link = productListItems[counter].SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
-            href = link.Attributes["data-src"].Value;
-            SecondImage.Source = new BitmapImage(new Uri(href));
-
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            int counter = 1;
+            int counter = 0;
             string href;
+            int row = 0; // Increment this every time u add a pokemon
+            int col = 1; // Maybe dont have to Increment this 
 
             var link = productListItems[counter].SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
             href = link.Attributes["data-src"].Value;
@@ -66,8 +58,8 @@ namespace PokemonApp
             image.Source = new BitmapImage(new Uri(href));
             image.Height = 100;
             image.Width = 100;
-            Grid.SetRow(image, 0);
-            Grid.SetColumn(image, 3);
+            Grid.SetRow(image, row);
+            Grid.SetColumn(image, col);
             Grid.Children.Add(image);
 
 
@@ -76,7 +68,7 @@ namespace PokemonApp
 
             //---------------------------------------------------------------------------------------------------------------------------------
 
-            MessageBox.Show($" bulbasaur Image : {href}");
+            //MessageBox.Show($" bulbasaur Image : {href}");
 
 
             //MessageBox.Show(productListItems[0].InnerHtml);
