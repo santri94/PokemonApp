@@ -22,17 +22,12 @@ namespace PokemonApp
     public partial class PokemonWindow : Window
     {
         public List<HtmlNode> productListItems;
-        public PokemonWindow(List<HtmlNode> productListItems)
+        public PokemonWindow()
         {
             InitializeComponent();
-            this.productListItems = productListItems;
-            //Test();
+            GetHtmlAsync();
         }
 
-        public void Test()
-        {
-            //MessageBox.Show(productListItems[0].InnerHtml);
-        }
 
         
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,13 +35,33 @@ namespace PokemonApp
             int counter = 0;
             string href;
 
-            MessageBox.Show(productListItems[0].InnerHtml);
+            //MessageBox.Show(productListItems[0].InnerHtml);
 
             var link = productListItems[counter].SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
             href = link.Attributes["data-src"].Value;
             MessageBox.Show($" bulbasaur Image : {href}");
 
         }
-        
+
+        public async void GetHtmlAsync()
+        {
+            var url = "https://pokemondb.net/pokedex/national";
+
+            var httpClient = new HttpClient();
+            var html = await httpClient.GetStringAsync(url);
+
+            var htmlDocument = new HtmlDocument();
+            htmlDocument.LoadHtml(html);
+
+            var producsHtml = htmlDocument.DocumentNode.Descendants("div")
+                .Where(node => node.GetAttributeValue("class", "")
+                .Equals("infocard-list infocard-list-pkmn-lg")).ToList();
+
+            productListItems = producsHtml[0].Descendants("div")
+                .Where(node => node.GetAttributeValue("class", "")
+                .Contains("infocard")).ToList();
+
+        }
+
     }
 }

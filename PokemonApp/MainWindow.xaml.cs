@@ -30,11 +30,9 @@ namespace PokemonApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Program program = new Program();
-            program.CalledSecondWindow();
             
-            //PokemonWindow SecondWindow = new PokemonWindow(program.productListItems);
-            //SecondWindow.Show();
+            PokemonWindow SecondWindow = new PokemonWindow();
+            SecondWindow.Show();
             this.Close();
         }
     }
