@@ -26,20 +26,68 @@ namespace PokemonApp
         {
             InitializeComponent();
             GetHtmlAsync();
+            //AddPokemons();
         }
 
-
-        
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void AddPokemons()
         {
-            int counter = 0;
+            int counter = 1;
             string href;
-
-            //MessageBox.Show(productListItems[0].InnerHtml);
 
             var link = productListItems[counter].SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
             href = link.Attributes["data-src"].Value;
+            SecondImage.Source = new BitmapImage(new Uri(href));
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            int counter = 1;
+            string href;
+
+            var link = productListItems[counter].SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
+            href = link.Attributes["data-src"].Value;
+
+            //--------------------------------------------------------------------------------------------------------------------------------
+
+            /*
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri(href));
+            image.Height = 100;
+            image.Width = 100;
+            image.Margin = new Thickness(47, 25, 0, 0);
+            image.Visibility = System.Windows.Visibility.Visible;
+            image.VerticalAlignment = 0;
+            image.Opacity = 1.0;
+            */
+
+            Image image = new Image();
+            image.Source = new BitmapImage(new Uri(href));
+            image.Height = 100;
+            image.Width = 100;
+            Grid.SetRow(image, 0);
+            Grid.SetColumn(image, 3);
+            Grid.Children.Add(image);
+
+
+
+
+
+            //---------------------------------------------------------------------------------------------------------------------------------
+
             MessageBox.Show($" bulbasaur Image : {href}");
+
+
+            //MessageBox.Show(productListItems[0].InnerHtml);
+
+            /*
+            var link = productListItems[counter].SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
+            href = link.Attributes["data-src"].Value;
+            MessageBox.Show($" bulbasaur Image : {href}");
+
+            SecondImage.Source = new BitmapImage(new Uri(href));
+            */
 
         }
 

@@ -33,6 +33,7 @@ namespace PokemonApp
             
             PokemonWindow SecondWindow = new PokemonWindow();
             SecondWindow.Show();
+            //SecondWindow.AddPokemons();
             this.Close();
         }
     }
