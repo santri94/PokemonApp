@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using HtmlAgilityPack;
+using System.Net.Http;
 
 
 namespace PokemonApp
@@ -25,6 +26,16 @@ namespace PokemonApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Program program = new Program();
+            program.CalledSecondWindow();
+            
+            //PokemonWindow SecondWindow = new PokemonWindow(program.productListItems);
+            //SecondWindow.Show();
+            this.Close();
         }
     }
 }

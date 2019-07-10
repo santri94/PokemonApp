@@ -8,14 +8,25 @@ using System.Threading.Tasks;
 
 namespace PokemonApp
 {
-    class Program
+    public class Program
     {
-        Program()
+        public List<HtmlNode> productListItems;
+
+        public Program()
         {
             GetHtmlAsync();
+            Console.WriteLine("Constructor Called!!");
+        }
+        
+
+        public void CalledSecondWindow()
+        {
+            PokemonWindow SecondWindow = new PokemonWindow(productListItems);
+            SecondWindow.Show();
+            SecondWindow.Test();
         }
 
-        private static async void GetHtmlAsync()
+        public async void GetHtmlAsync()
         {
             var url = "https://pokemondb.net/pokedex/national";
 
@@ -29,13 +40,13 @@ namespace PokemonApp
                 .Where(node => node.GetAttributeValue("class", "")
                 .Equals("infocard-list infocard-list-pkmn-lg")).ToList();
 
-
-            var productListItems = producsHtml[0].Descendants("div")
+            productListItems = producsHtml[0].Descendants("div")
                 .Where(node => node.GetAttributeValue("class", "")
                 .Contains("infocard")).ToList();
 
 
 
+            /*
             int counter = 0;
             string href;
             foreach (var productListItem in productListItems)
@@ -49,11 +60,12 @@ namespace PokemonApp
                 counter++;
 
             }
+            */
 
 
 
 
-            Console.WriteLine();
+            //Console.WriteLine();
 
 
         }
