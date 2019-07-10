@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokemonApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Pokemon App" Height="450" Width="450
+        ">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="410" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="150" />
+
+            
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="30" FontStyle="Italic" FontWeight="Bold" TextAlignment="Center" Foreground="OrangeRed" >
+            Pokemon App
+        </TextBlock>
+        <Image x:Name="PokemonImage" Width="100" Height="100"></Image>
     </Grid>
 </Window>
