@@ -38,8 +38,7 @@ namespace PokemonApp
             int row = 0; // Increment this every time u add a pokemon
             int col = 1; // Maybe dont have to Increment this 
 
-            var link = productListItems[counter].SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
-            href = link.Attributes["data-src"].Value;
+
 
             //--------------------------------------------------------------------------------------------------------------------------------
 
@@ -54,6 +53,30 @@ namespace PokemonApp
             image.Opacity = 1.0;
             */
 
+            foreach (var pokemon in productListItems)
+            {
+                var link = pokemon.SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
+                href = link.Attributes["data-src"].Value;
+                RowDefinition x = new RowDefinition();
+                Grid.RowDefinitions.Add(x);
+                x.Height = new GridLength(150);
+                Image image = new Image();
+                image.Source = new BitmapImage(new Uri(href));
+                image.Height = 100;
+                image.Width = 100;
+                Grid.SetRow(image, row);
+                Grid.SetColumn(image, col);
+                Grid.Children.Add(image);
+                counter++;
+                row++;
+            }
+
+            //RowDefinition x = new RowDefinition();
+            //GridLength y = new GridLength(150);
+            //Grid.RowDefinitions.Add(new RowDefinition());
+            
+
+            /*
             Image image = new Image();
             image.Source = new BitmapImage(new Uri(href));
             image.Height = 100;
@@ -61,7 +84,7 @@ namespace PokemonApp
             Grid.SetRow(image, row);
             Grid.SetColumn(image, col);
             Grid.Children.Add(image);
-
+            */
 
 
 
