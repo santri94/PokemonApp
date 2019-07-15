@@ -35,7 +35,9 @@ namespace PokemonApp
         {
 
             int counter = 0;
-            string href;
+            string name;
+            string img;
+            string type;
             int row = 0; // Increment this every time u add a pokemon
             int col = 1; // Maybe dont have to Increment this 
 
@@ -60,14 +62,21 @@ namespace PokemonApp
             foreach (var pokemon in productListItems)
             {
 
+                var getName = pokemon.SelectNodes("//span[2]//a[1][@class='ent-name']").ElementAtOrDefault(counter);
+                name = getName.InnerText;
+
                 var link = pokemon.SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
-                href = link.Attributes["data-src"].Value;
+                img = link.Attributes["data-src"].Value;
+
+                var getType = pokemon.SelectNodes("//span[2]//small[2]//a[1]").ElementAtOrDefault(counter);
+                type = getType.InnerText;
+
 
 
                 //------------------------------------------------------------------------------------------------------
                 //                         Adding Pokemon Object to the Loop
                 //------------------------------------------------------------------------------------------------------
-                Pokemon poke = new Pokemon(href);
+                Pokemon poke = new Pokemon(name, img, type);
                 //poke.image = href;
                 seasonOne.Add(poke);
                 //------------------------------------------------------------------------------------------------------
