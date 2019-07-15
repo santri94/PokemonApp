@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokemonApp"
         mc:Ignorable="d"
-        Title="Loading" Height="150" Width="300" WindowStartupLocation="CenterScreen">
+        Title="Loading" Height="150" Width="300" WindowStartupLocation="CenterScreen" Background="White" AllowsTransparency="True" WindowStyle="None">
     <Grid>
-        <TextBlock  Margin="69,40,49,37" TextWrapping="Wrap" Text="  Loading . . ." HorizontalAlignment="Center" VerticalAlignment="Center" Height="42" Width="174" FontSize="30" FontStyle="Italic" Foreground="OrangeRed"/>
+        <TextBlock Margin="69,40,49,37" TextWrapping="Wrap" Text="  Loading . . ." HorizontalAlignment="Center" VerticalAlignment="Center" Height="42" Width="174" FontSize="30" FontStyle="Italic" Foreground="OrangeRed"/>
 
 
     </Grid>

@@ -21,6 +21,8 @@ namespace PokemonApp
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+    /// Image: http://home.eyesonff.com/showthread.php/151428-POKEMON/page2
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -32,9 +34,6 @@ namespace PokemonApp
         {
             
             PokemonWindow SecondWindow = new PokemonWindow();
-            //SecondWindow.Show();
-            //SecondWindow.LoadPokemons();
-            //SecondWindow.AddPokemons();
             this.Close();
         }
     }

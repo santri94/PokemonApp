@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokemonApp"
         mc:Ignorable="d"
-        Title="Pokemon App" Height="450" Width="450
-        " WindowStartupLocation="CenterScreen">
+        Title="Pokemon App" Height="330" Width="450" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
@@ -14,16 +13,17 @@
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="150" />
-            <RowDefinition Height="150" />
-            <RowDefinition Height="150" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
 
             
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" Grid.Row="1" FontSize="30" FontStyle="Italic" FontWeight="Bold" TextAlignment="Center" Foreground="OrangeRed" >
+        <TextBlock Grid.Column="1" Grid.Row="0" FontSize="30" FontStyle="Italic" FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center" Foreground="OrangeRed" >
             Pokemon App
         </TextBlock>
-        <Button Grid.Column="1" Grid.Row="2" Width="100" Height="50" VerticalAlignment="Top" Click="Button_Click">
+        <Image Grid.Column="1" Grid.Row="1" Source="C:\Pokemon\PokemonApp\FrontWindow.jpg" ></Image>
+        <Button Grid.Column="1" Style="{StaticResource RoundButton}" Grid.Row="2" Width="100" Height="50" VerticalAlignment="Center" Click="Button_Click">
             Continue
         </Button>
         <Image x:Name="PokemonImage" Width="100" Height="100"></Image>
