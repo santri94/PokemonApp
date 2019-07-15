@@ -45,13 +45,15 @@ namespace PokemonApp
             foreach (var pokemon in productListItems)
             {
 
-                var getName = pokemon.SelectNodes("//span[2]//a[1][@class='ent-name']").ElementAtOrDefault(counter);
+                var getName = pokemon.SelectNodes("//a[@class='ent-name']").ElementAtOrDefault(counter);
                 name = getName.InnerText;
 
                 var link = pokemon.SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
                 img = link.Attributes["data-src"].Value;
 
-                var getType = pokemon.SelectNodes("//span[2]//small[2]//a[1]").ElementAtOrDefault(counter);
+                ///html/body/main/div[3]/div[1]/span[1]/a/img
+
+                var getType = pokemon.SelectNodes("//small[2]//a[1]").ElementAtOrDefault(counter);
                 type = getType.InnerText;
 
 
@@ -60,6 +62,7 @@ namespace PokemonApp
                 //                         Adding Pokemon Object to the Loop
                 //------------------------------------------------------------------------------------------------------
                 Pokemon poke = new Pokemon(name, img, type);
+                //Pokemon poke = new Pokemon(img);
                 seasonOne.Add(poke);
                 //------------------------------------------------------------------------------------------------------
                 counter++;
