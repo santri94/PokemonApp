@@ -21,16 +21,16 @@ namespace PokemonApp
     /// </summary>
     public partial class PokemonWindow : Window
     {
-        public List<HtmlNode> productListItems;
+        public List<HtmlNode> productListItems = new List<HtmlNode>();
         public List<Pokemon> seasonOne = new List<Pokemon>();
         public PokemonWindow()
         {
             InitializeComponent();
             GetHtmlAsync();
+            //LoadPokemons();
         }
 
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void LoadPokemons()
         {
 
             int counter = 0;
@@ -78,7 +78,7 @@ namespace PokemonApp
                 row++;
             }
 
-
+            this.Show();
         }
 
         public async void GetHtmlAsync()
@@ -98,6 +98,8 @@ namespace PokemonApp
             productListItems = producsHtml[0].Descendants("div")
                 .Where(node => node.GetAttributeValue("class", "")
                 .Contains("infocard")).ToList();
+
+            LoadPokemons();
 
         }
 

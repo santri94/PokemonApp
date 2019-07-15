@@ -13,13 +13,9 @@
             <ColumnDefinition Width="410" />
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="150" />
-            <RowDefinition Height="150" />
-            <RowDefinition Height="150" />
-        </Grid.RowDefinitions>
-        <Button Width="100" Height="50" Grid.Column="1" Click="Button_Click" Grid.ColumnSpan="3" Margin="152,0,158,100">refresh</Button>
+            <Grid.RowDefinitions>
+            </Grid.RowDefinitions>
 
-    </Grid>
+        </Grid>
     </ScrollViewer>
 </Window>
