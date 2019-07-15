@@ -22,6 +22,7 @@ namespace PokemonApp
     public partial class PokemonWindow : Window
     {
         public List<HtmlNode> productListItems;
+        public List<Pokemon> seasonOne = new List<Pokemon>();
         public PokemonWindow()
         {
             InitializeComponent();
@@ -58,19 +59,32 @@ namespace PokemonApp
             
             foreach (var pokemon in productListItems)
             {
+
                 var link = pokemon.SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
                 href = link.Attributes["data-src"].Value;
+
+
+                //------------------------------------------------------------------------------------------------------
+                //                         Adding Pokemon Object to the Loop
+                //------------------------------------------------------------------------------------------------------
+                Pokemon poke = new Pokemon(href);
+                //poke.image = href;
+                seasonOne.Add(poke);
+                //------------------------------------------------------------------------------------------------------
+                counter++;
+            }
+            foreach (var item in seasonOne)
+            {
                 RowDefinition x = new RowDefinition();
                 Grid.RowDefinitions.Add(x);
                 x.Height = new GridLength(150);
                 Image image = new Image();
-                image.Source = new BitmapImage(new Uri(href));
+                image.Source = new BitmapImage(new Uri(item.image));
                 image.Height = 100;
                 image.Width = 100;
                 Grid.SetRow(image, row);
                 Grid.SetColumn(image, col);
                 Grid.Children.Add(image);
-                counter++;
                 row++;
             }
 
