@@ -27,7 +27,6 @@ namespace PokemonApp
         {
             InitializeComponent();
             GetHtmlAsync();
-            //AddPokemons();
         }
 
 
@@ -41,23 +40,6 @@ namespace PokemonApp
             int row = 0; // Increment this every time u add a pokemon
             int col = 1; // Maybe dont have to Increment this 
 
-
-
-            //--------------------------------------------------------------------------------------------------------------------------------
-
-            /*
-            Image image = new Image();
-            image.Source = new BitmapImage(new Uri(href));
-            image.Height = 100;
-            image.Width = 100;
-            image.Margin = new Thickness(47, 25, 0, 0);
-            image.Visibility = System.Windows.Visibility.Visible;
-            image.VerticalAlignment = 0;
-            image.Opacity = 1.0;
-            */
-
-            ScrollViewer viewer = new ScrollViewer();
-            //viewer.HorizontalScrollBarVisibility = ScrollBarVisibility[1];
             
             foreach (var pokemon in productListItems)
             {
@@ -77,7 +59,6 @@ namespace PokemonApp
                 //                         Adding Pokemon Object to the Loop
                 //------------------------------------------------------------------------------------------------------
                 Pokemon poke = new Pokemon(name, img, type);
-                //poke.image = href;
                 seasonOne.Add(poke);
                 //------------------------------------------------------------------------------------------------------
                 counter++;
@@ -97,38 +78,6 @@ namespace PokemonApp
                 row++;
             }
 
-            //RowDefinition x = new RowDefinition();
-            //GridLength y = new GridLength(150);
-            //Grid.RowDefinitions.Add(new RowDefinition());
-            
-
-            /*
-            Image image = new Image();
-            image.Source = new BitmapImage(new Uri(href));
-            image.Height = 100;
-            image.Width = 100;
-            Grid.SetRow(image, row);
-            Grid.SetColumn(image, col);
-            Grid.Children.Add(image);
-            */
-
-
-
-
-            //---------------------------------------------------------------------------------------------------------------------------------
-
-            //MessageBox.Show($" bulbasaur Image : {href}");
-
-
-            //MessageBox.Show(productListItems[0].InnerHtml);
-
-            /*
-            var link = productListItems[counter].SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
-            href = link.Attributes["data-src"].Value;
-            MessageBox.Show($" bulbasaur Image : {href}");
-
-            SecondImage.Source = new BitmapImage(new Uri(href));
-            */
 
         }
 
