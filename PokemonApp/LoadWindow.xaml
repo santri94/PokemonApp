@@ -1,0 +1,14 @@
+﻿<Window x:Class="PokemonApp.LoadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PokemonApp"
+        mc:Ignorable="d"
+        Title="Loading" Height="150" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock  Margin="69,40,49,37" TextWrapping="Wrap" Text="  Loading . . ." HorizontalAlignment="Center" VerticalAlignment="Center" Height="42" Width="174" FontSize="30" FontStyle="Italic" Foreground="OrangeRed"/>
+
+
+    </Grid>
+</Window>

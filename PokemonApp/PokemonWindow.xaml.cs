@@ -23,6 +23,7 @@ namespace PokemonApp
     {
         public List<HtmlNode> productListItems = new List<HtmlNode>();
         public List<Pokemon> seasonOne = new List<Pokemon>();
+        LoadWindow loadWindow = new LoadWindow();
         public PokemonWindow()
         {
             InitializeComponent();
@@ -78,11 +79,13 @@ namespace PokemonApp
                 row++;
             }
 
+            loadWindow.Close();
             this.Show();
         }
 
         public async void GetHtmlAsync()
         {
+            loadWindow.Show();
             var url = "https://pokemondb.net/pokedex/national";
 
             var httpClient = new HttpClient();
