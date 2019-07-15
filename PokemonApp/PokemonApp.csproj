@@ -76,6 +76,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pokemon.cs" />
     <Compile Include="PokemonWindow.xaml.cs">
       <DependentUpon>PokemonWindow.xaml</DependentUpon>
     </Compile>
