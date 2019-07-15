@@ -53,6 +53,9 @@ namespace PokemonApp
             image.Opacity = 1.0;
             */
 
+            ScrollViewer viewer = new ScrollViewer();
+            //viewer.HorizontalScrollBarVisibility = ScrollBarVisibility[1];
+            
             foreach (var pokemon in productListItems)
             {
                 var link = pokemon.SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
