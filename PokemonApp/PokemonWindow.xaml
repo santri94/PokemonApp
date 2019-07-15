@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:PokemonApp"
         mc:Ignorable="d"
         Title="PokemonWindow" Height="450" Width="450" WindowStartupLocation="CenterScreen">
+    <ScrollViewer>
     <Grid x:Name="Grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
@@ -20,4 +21,5 @@
         <Button Width="100" Height="50" Grid.Column="1" Click="Button_Click" Grid.ColumnSpan="3" Margin="152,0,158,100">refresh</Button>
 
     </Grid>
+    </ScrollViewer>
 </Window>
