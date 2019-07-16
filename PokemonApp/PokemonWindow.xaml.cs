@@ -40,7 +40,7 @@ namespace PokemonApp
             string name;
             string img;
             string type;
-            int row = 1; // Increment this every time u add a pokemon
+            int row = 3; // Increment this every time u add a pokemon
             int pokemonsCol = 2; // Maybe dont have to Increment this 
             int pokemonInfoCol = 1; // Maybe dont have to Increment this 
 
