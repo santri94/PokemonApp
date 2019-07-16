@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PokemonApp"
         mc:Ignorable="d"
-        Title="PokemonWindow" Height="450" Width="450" WindowStartupLocation="CenterScreen">
+        Title="PokemonWindow" Height="450"  Width="470" WindowStartupLocation="CenterScreen" Background="#FFBAC0FB">
     <ScrollViewer>
-    <Grid x:Name="Grid">
+        <ScrollViewer.Effect>
+            <DropShadowEffect/>
+        </ScrollViewer.Effect>
+        <Grid x:Name="Grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
             <ColumnDefinition Width="205" />
@@ -15,7 +18,9 @@
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="100"> </RowDefinition>
             </Grid.RowDefinitions>
+            <Image Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="350" Height="90" Grid.Row="0" Source="C:\Pokemon\PokemonApp\3.GIF" ></Image>
         </Grid>
     </ScrollViewer>
 </Window>

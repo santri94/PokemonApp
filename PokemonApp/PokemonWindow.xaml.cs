@@ -19,6 +19,8 @@ namespace PokemonApp
     /// <summary>
     /// Interaction logic for PokemonWindow.xaml
     /// </summary>
+    /// 
+    /// image : https://www.google.com/search?q=pokemon&safe=strict&biw=1600&bih=757&tbm=isch&source=lnt&tbs=isz:ex,iszw:400,iszh:90#imgrc=1WlSbpprKRo1dM:
     public partial class PokemonWindow : Window
     {
         public List<HtmlNode> productListItems = new List<HtmlNode>();
@@ -38,7 +40,7 @@ namespace PokemonApp
             string name;
             string img;
             string type;
-            int row = 0; // Increment this every time u add a pokemon
+            int row = 1; // Increment this every time u add a pokemon
             int pokemonsCol = 2; // Maybe dont have to Increment this 
             int pokemonInfoCol = 1; // Maybe dont have to Increment this 
 
