@@ -39,7 +39,8 @@ namespace PokemonApp
             string img;
             string type;
             int row = 0; // Increment this every time u add a pokemon
-            int col = 1; // Maybe dont have to Increment this 
+            int pokemonsCol = 2; // Maybe dont have to Increment this 
+            int pokemonInfoCol = 1; // Maybe dont have to Increment this 
 
             
             foreach (var pokemon in productListItems)
@@ -72,14 +73,34 @@ namespace PokemonApp
                 RowDefinition x = new RowDefinition();
                 Grid.RowDefinitions.Add(x);
                 x.Height = new GridLength(150);
+                //-------------------------------------------------------------------------------------------------------
+                //                                      Adding Name and Type for Each Pokemon
+                //-------------------------------------------------------------------------------------------------------
+                TextBlock info = new TextBlock();
+                info.Text = $"{item.name} -- {item.type} ";
+                info.FontSize = 18;
+                info.VerticalAlignment = VerticalAlignment.Center;
+                info.HorizontalAlignment = HorizontalAlignment.Center;
+                info.Foreground = System.Windows.Media.Brushes.OrangeRed;
+                info.FontWeight = System.Windows.FontWeights.Bold;
+                info.FontStyle = System.Windows.FontStyles.Italic;
+
+                Grid.SetRow(info, row);
+                Grid.SetColumn(info, pokemonInfoCol);
+                Grid.Children.Add(info);
+                //-------------------------------------------------------------------------------------------------------
+                //-------------------------------------------------------------------------------------------------------
+                //                                      Adding Image     
+                //-------------------------------------------------------------------------------------------------------
                 Image image = new Image();
                 image.Source = new BitmapImage(new Uri(item.image));
                 image.Height = 100;
                 image.Width = 100;
                 Grid.SetRow(image, row);
-                Grid.SetColumn(image, col);
+                Grid.SetColumn(image, pokemonsCol);
                 Grid.Children.Add(image);
                 row++;
+                //-------------------------------------------------------------------------------------------------------
             }
 
             loadWindow.Close();
