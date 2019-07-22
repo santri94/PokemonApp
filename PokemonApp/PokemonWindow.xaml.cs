@@ -30,26 +30,24 @@ namespace PokemonApp
         {
             InitializeComponent();
             GetHtmlAsync();
-            //LoadPokemons();
+            LoadPokemons();
         }
 
-        private void LoadPokemons()
+        public void LoadPokemons()
         {
-
             int counter = 0;
-            string name;
-            string img;
-            string type;
+            string name = "";
+            string img = "";
+            string type = "";
             int row = 3; // Increment this every time u add a pokemon
             int pokemonsCol = 2; // Maybe dont have to Increment this 
             int pokemonInfoCol = 1; // Maybe dont have to Increment this 
 
-            
             foreach (var pokemon in productListItems)
             {
+                var index = Array.IndexOf(productListItems.ToArray(), pokemon);
 
-                var getName = pokemon.SelectNodes("//a[@class='ent-name']").ElementAtOrDefault(counter);
-                name = getName.InnerText;
+                var getName = PokemonOperation.GetPokemonName(pokemon, index);
 
                 var link = pokemon.SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
                 img = link.Attributes["data-src"].Value;
@@ -129,8 +127,6 @@ namespace PokemonApp
                 .Contains("infocard")).ToList();
 
             LoadPokemons();
-
         }
-
     }
 }

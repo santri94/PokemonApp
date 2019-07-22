@@ -18,6 +18,7 @@ namespace PokemonApp
             this.image = image;
             this.type = type;
         }
+
         public Pokemon(string image)
         {
             this.image = image;

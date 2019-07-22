@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pokemon.cs" />
+    <Compile Include="PokemonOperation.cs" />
     <Compile Include="PokemonWindow.xaml.cs">
       <DependentUpon>PokemonWindow.xaml</DependentUpon>
     </Compile>

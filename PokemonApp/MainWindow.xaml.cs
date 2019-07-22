@@ -23,8 +23,12 @@ namespace PokemonApp
     /// </summary>
     /// 
     /// Image: http://home.eyesonff.com/showthread.php/151428-POKEMON/page2
+    /// 
+    
     public partial class MainWindow : Window
     {
+        
+
         public MainWindow()
         {
             InitializeComponent();
