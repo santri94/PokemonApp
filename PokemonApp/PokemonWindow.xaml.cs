@@ -30,7 +30,6 @@ namespace PokemonApp
         {
             InitializeComponent();
             GetHtmlAsync();
-            //LoadPokemons();
         }
 
         private void LoadPokemons()
