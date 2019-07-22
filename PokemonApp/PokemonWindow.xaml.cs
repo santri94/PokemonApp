@@ -36,7 +36,7 @@ namespace PokemonApp
         private void LoadPokemons()
         {
 
-            int counter = 0;
+            int number;
             string name;
             string img;
             string type;
@@ -44,32 +44,27 @@ namespace PokemonApp
             int pokemonsCol = 2; // Maybe dont have to Increment this 
             int pokemonInfoCol = 1; // Maybe dont have to Increment this 
 
-            
+        //-------------------------------------------------------------------------------------------------------------------------------------
             foreach (var pokemon in productListItems)
             {
+                number = Int32.Parse(pokemon.InnerText.Substring(1,3));
 
-                var getName = pokemon.SelectNodes("//a[@class='ent-name']").ElementAtOrDefault(counter);
-                name = getName.InnerText;
+                img = pokemon.FirstChild.FirstChild.FirstChild.Attributes[1].Value;
 
-                var link = pokemon.SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
-                img = link.Attributes["data-src"].Value;
+                name = pokemon.ChildNodes[1].ChildNodes[2].InnerText;
 
-                ///html/body/main/div[3]/div[1]/span[1]/a/img
-
-                var getType = pokemon.SelectNodes("//small[2]//a[1]").ElementAtOrDefault(counter);
-                type = getType.InnerText;
-
+                type = pokemon.ChildNodes[1].ChildNodes[4].ChildNodes[0].InnerText;
 
 
                 //------------------------------------------------------------------------------------------------------
                 //                         Adding Pokemon Object to the Loop
                 //------------------------------------------------------------------------------------------------------
-                Pokemon poke = new Pokemon(name, img, type);
+                Pokemon poke = new Pokemon(number, name, img, type);
                 //Pokemon poke = new Pokemon(img);
                 seasonOne.Add(poke);
                 //------------------------------------------------------------------------------------------------------
-                counter++;
             }
+
             foreach (var item in seasonOne)
             {
                 RowDefinition x = new RowDefinition();
