@@ -52,7 +52,6 @@ namespace PokemonApp
                 var link = pokemon.SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
                 img = link.Attributes["data-src"].Value;
 
-                ///html/body/main/div[3]/div[1]/span[1]/a/img
 
                 var getType = pokemon.SelectNodes("//small[2]//a[1]").ElementAtOrDefault(counter);
                 type = getType.InnerText;
