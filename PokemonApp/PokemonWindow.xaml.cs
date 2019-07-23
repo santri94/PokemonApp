@@ -43,9 +43,9 @@ namespace PokemonApp
             
             foreach (var pokemon in productListItems)
             {
+                var index = Array.IndexOf(productListItems.ToArray(), pokemon);
 
-                var getName = pokemon.SelectNodes("//a[@class='ent-name']").ElementAtOrDefault(counter);
-                name = getName.InnerText;
+                name = PokemonGetData.GetPokemonName(pokemon, index);
 
                 var link = pokemon.SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
                 img = link.Attributes["data-src"].Value;
