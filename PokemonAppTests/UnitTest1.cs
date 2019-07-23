@@ -29,28 +29,48 @@ namespace PokemonAppTests
 
         }
 
-        [Test]
-        public void ShouldGetName()
+        [Test, TestCaseSource("PokemonNames")]
+        public void ShouldGetName(string expected, int index)
         {
             //          Expected Value
-            string expected = "Bulba";
+            //string expected = "Bulbasaur";
 
             //          Actual Value
-            string actual = PokemonGetData.GetPokemonName(_productListItems[0], 0);
+            string actual = PokemonGetData.GetPokemonName(_productListItems[index], index);
 
             Assert.AreEqual(expected, actual);
         }
 
+        static object[] PokemonNames =
+        {
+            new object[] {"Bulbasaur", 0},
+            new object[] {"Ivysaur", 1},
+            new object[] {"Venusaur", 2},
+            new object[] {"Mew", 150} // Getting The Last Pokemon
+        };
+
+        [Test]
         public void ShouldGetImage()
         {
-            string expected = "";
-            string actual = "";
+            //          Expected Value
+            string expected = "https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/ivysaur.png";
+
+            //          Actual Value
+            string actual = PokemonGetData.GetPokemonImage(_productListItems[1], 1);
+
+            Assert.AreEqual(expected, actual);
         }
 
+        [Test]
         public void ShouldGetType()
         {
-            string expected = "";
-            string actual = "";
+            //          Expected Value
+            string expected = "Psychic";
+
+            //          Actual Value
+            string actual = PokemonGetData.GetPokemonType(_productListItems[150], 150); // Checking The Last Pokemon Of Season One
+
+            Assert.AreEqual(expected, actual);
         }
     }
 }

@@ -35,7 +35,6 @@ namespace PokemonApp
         private void LoadPokemons()
         {
 
-            int counter = 0;
             string name;
             string img;
             string type;
@@ -46,14 +45,8 @@ namespace PokemonApp
                 var index = Array.IndexOf(productListItems.ToArray(), pokemon);
 
                 name = PokemonGetData.GetPokemonName(pokemon, index);
-
-                var link = pokemon.SelectNodes("//span[@data-src]").ElementAtOrDefault(counter);
-                img = link.Attributes["data-src"].Value;
-
-                var getType = pokemon.SelectNodes("//small[2]//a[1]").ElementAtOrDefault(counter);
-                type = getType.InnerText;
-
-
+                img = PokemonGetData.GetPokemonImage(pokemon, index);
+                type = PokemonGetData.GetPokemonType(pokemon, index);
 
                 //------------------------------------------------------------------------------------------------------
                 //                         Adding Pokemon Object to the Loop
@@ -62,10 +55,7 @@ namespace PokemonApp
                 //Pokemon poke = new Pokemon(img);
                 seasonOne.Add(poke);
                 //------------------------------------------------------------------------------------------------------
-                counter++;
             }
-
-
 
             PrintPokemons();
             loadWindow.Close();
