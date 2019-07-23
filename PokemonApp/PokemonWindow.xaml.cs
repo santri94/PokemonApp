@@ -29,34 +29,18 @@ namespace PokemonApp
         public PokemonWindow()
         {
             InitializeComponent();
-            GetHtmlAsync();
+            Next();
         }
 
-        private void LoadPokemons()
+        public void Next()
         {
+            loadWindow.Show();
+        }
 
-            string name;
-            string img;
-            string type;
-
-            
-            foreach (var pokemon in productListItems)
-            {
-                var index = Array.IndexOf(productListItems.ToArray(), pokemon);
-
-                name = PokemonGetData.GetPokemonName(pokemon, index);
-                img = PokemonGetData.GetPokemonImage(pokemon, index);
-                type = PokemonGetData.GetPokemonType(pokemon, index);
-
-                //------------------------------------------------------------------------------------------------------
-                //                         Adding Pokemon Object to the Loop
-                //------------------------------------------------------------------------------------------------------
-                Pokemon poke = new Pokemon(name, img, type);
-                //Pokemon poke = new Pokemon(img);
-                seasonOne.Add(poke);
-                //------------------------------------------------------------------------------------------------------
-            }
-
+        public void DisplayWindowWithPokemons()
+        {
+            productListItems = PokemonGetData.productListItems();
+            seasonOne = PokemonGetData.seasonOne();
             PrintPokemons();
             loadWindow.Close();
             this.Show();
@@ -67,6 +51,7 @@ namespace PokemonApp
             int row = 3; // Increment this every time u add a pokemon
             int pokemonsCol = 2; // Maybe dont have to Increment this 
             int pokemonInfoCol = 1; // Maybe dont have to Increment this 
+            //var seasonOne = PokemonGetData.seasonOne();
 
             foreach (var item in seasonOne)
             {
@@ -104,27 +89,5 @@ namespace PokemonApp
             }
         }
 
-        public async void GetHtmlAsync()
-        {
-            loadWindow.Show();
-            var url = "https://pokemondb.net/pokedex/national";
-
-            var httpClient = new HttpClient();
-            var html = await httpClient.GetStringAsync(url);
-
-            var htmlDocument = new HtmlDocument();
-            htmlDocument.LoadHtml(html);
-
-            var producsHtml = htmlDocument.DocumentNode.Descendants("div")
-                .Where(node => node.GetAttributeValue("class", "")
-                .Equals("infocard-list infocard-list-pkmn-lg")).ToList();
-
-            productListItems = producsHtml[0].Descendants("div")
-                .Where(node => node.GetAttributeValue("class", "")
-                .Contains("infocard")).ToList();
-
-            LoadPokemons();
-
-        }
     }
 }
