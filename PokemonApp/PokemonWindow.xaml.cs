@@ -62,10 +62,10 @@ namespace PokemonApp
                 //                                      Adding Name and Type for Each Pokemon
                 //-------------------------------------------------------------------------------------------------------
                 TextBlock info = new TextBlock();
-                info.Text = $"{item.name} -- {item.type} ";
-                info.FontSize = 18;
+                info.Text = $"   {item.name} \n   ({item.type})";
+                info.FontSize = 20;
                 info.VerticalAlignment = VerticalAlignment.Center;
-                info.HorizontalAlignment = HorizontalAlignment.Center;
+                info.HorizontalAlignment = HorizontalAlignment.Left;
                 info.Foreground = System.Windows.Media.Brushes.OrangeRed;
                 info.FontWeight = System.Windows.FontWeights.Bold;
                 info.FontStyle = System.Windows.FontStyles.Italic;
@@ -79,8 +79,8 @@ namespace PokemonApp
                 //-------------------------------------------------------------------------------------------------------
                 Image image = new Image();
                 image.Source = new BitmapImage(new Uri(item.image));
-                image.Height = 100;
-                image.Width = 100;
+                image.Height = 150;
+                image.Width = 150;
                 Grid.SetRow(image, row);
                 Grid.SetColumn(image, pokemonsCol);
                 Grid.Children.Add(image);

@@ -7,9 +7,7 @@
         mc:Ignorable="d"
         Title="PokemonWindow" Height="450"  Width="470" WindowStartupLocation="CenterScreen" Background="#FFBAC0FB">
     <ScrollViewer>
-        <ScrollViewer.Effect>
-            <DropShadowEffect/>
-        </ScrollViewer.Effect>
+
         <Grid x:Name="Grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />

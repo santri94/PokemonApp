@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:PokemonApp"
         mc:Ignorable="d"
         Title="Pokemon App" Height="330" Width="450" WindowStartupLocation="CenterScreen">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20" />
