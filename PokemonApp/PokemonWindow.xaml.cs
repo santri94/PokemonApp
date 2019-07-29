@@ -54,8 +54,17 @@ namespace PokemonApp
             //-----------------------------------------------------------------------------------------------
             //                                  Delete everything  from grid    
             //-----------------------------------------------------------------------------------------------
-            Grid.Children.RemoveRange(0,numberOfChildren);
-            Grid.RowDefinitions.RemoveRange(0, numberOfRows-1);
+            if (numberOfRows == 0)
+            {
+                //Don't do Anything about to start creating colums;
+            }
+            else
+            {
+                Grid.Children.RemoveRange(0,numberOfChildren);
+                Grid.RowDefinitions.RemoveRange(0, numberOfRows);
+
+            }
+            
             //-----------------------------------------------------------------------------------------------
             //MessageBox.Show($"Number of Elements on Grid {numberOfChildren} number of Rows {numberOfRows}");
 
@@ -64,7 +73,7 @@ namespace PokemonApp
 
         private void PrintPokemons()
         {
-            int row = 1; // Increment this every time u add a pokemon
+            int row = 0; // Increment this every time u add a pokemon
             int pokemonsCol = 2; // Maybe dont have to Increment this 
             int pokemonInfoCol = 1; // Maybe dont have to Increment this 
             //var seasonOne = PokemonGetData.seasonOne();
@@ -109,7 +118,7 @@ namespace PokemonApp
         {
             EmptyGrid();
             string search = SearchBox.Text;
-            int row = 1; // Increment this every time u add a pokemon
+            int row = 0; // Increment this every time u add a pokemon
             int pokemonsCol = 2; // Maybe dont have to Increment this 
             int pokemonInfoCol = 1; // Maybe dont have to Increment this 
             if (search == "")
