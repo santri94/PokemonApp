@@ -72,5 +72,17 @@ namespace PokemonAppTests
 
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void TimingSeasonOne()
+        {
+            // expected value -> 151 Pokemons
+            int expected = 150; 
+
+            // actual value
+            var size = PokemonGetData.seasonOne().ToArray().Length; // 151 Pokemons expected
+
+            Assert.AreEqual(expected, size);
+        }
     }
 }
