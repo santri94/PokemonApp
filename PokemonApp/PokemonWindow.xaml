@@ -6,23 +6,36 @@
         xmlns:local="clr-namespace:PokemonApp"
         mc:Ignorable="d"
         Title="PokemonWindow" Height="450"  Width="470" WindowStartupLocation="CenterScreen" Background="#FFBAC0FB">
-    <ScrollViewer>
 
-        <Grid x:Name="Grid">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="205" />
-            <ColumnDefinition Width="205" />
-            <ColumnDefinition Width="20" />
-        </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="100"> </RowDefinition>
-                <RowDefinition Height="25"> </RowDefinition>
-                <RowDefinition Height="30"> </RowDefinition>
-            </Grid.RowDefinitions>
-            <Image Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="350" Height="90" Grid.Row="0" Source="C:\Pokemon\PokemonApp\3.GIF" ></Image>
-            <TextBox x:Name="SearchBox" FontStyle="Italic" FontWeight="DemiBold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="380" FontSize="15"></TextBox>
-            <Button Width="100" Height="25" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Style="{StaticResource RoundButton}">Search</Button>
+    <ScrollViewer>
+        <Grid x:Name="Grid0">
+            <Grid x:Name="Grid2" Width="470" Height="160" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="205" />
+                    <ColumnDefinition Width="205" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"> </RowDefinition>
+                        <RowDefinition Height="25"> </RowDefinition>
+                        <RowDefinition Height="30"> </RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="350" Height="90" Grid.Row="0" Source="C:\Pokemon\PokemonApp\3.GIF" ></Image>
+                    <TextBox x:Name="SearchBox" FontStyle="Italic" FontWeight="DemiBold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="380" FontSize="15"></TextBox>
+                    <Button Width="100" Height="25" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Style="{StaticResource RoundButton}" Click="Button_Click">Search</Button>
+            </Grid>
+            <Grid x:Name="Grid" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90" />
+                    <ColumnDefinition Width="132" />
+                    <ColumnDefinition Width="132" />
+                    <ColumnDefinition Width="90" />
+                </Grid.ColumnDefinitions>
+
+
+            </Grid>
         </Grid>
+        
     </ScrollViewer>
 </Window>
