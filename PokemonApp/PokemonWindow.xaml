@@ -22,7 +22,7 @@
                         <RowDefinition Height="30"> </RowDefinition>
                     </Grid.RowDefinitions>
                     <Image Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="350" Height="90" Grid.Row="0" Source="C:\Pokemon\PokemonApp\3.GIF" ></Image>
-                    <TextBox x:Name="SearchBox" FontStyle="Italic" FontWeight="DemiBold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="380" FontSize="15"></TextBox>
+                    <TextBox x:Name="SearchBox" FontStyle="Italic" FontWeight="DemiBold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="380" FontSize="15" PreviewTextInput="Preview"></TextBox>
                     <Button Width="100" Height="25" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Style="{StaticResource RoundButton}" Click="Button_Click">Search</Button>
             </Grid>
             <Grid x:Name="Grid" Margin="0,160,0,0" >

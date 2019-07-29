@@ -116,17 +116,25 @@ namespace PokemonApp
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            EmptyGrid();
-            string search = SearchBox.Text;
+
+        }
+
+        private void Preview(object sender, TextCompositionEventArgs e)
+        {
+            
             int row = 0; // Increment this every time u add a pokemon
             int pokemonsCol = 2; // Maybe dont have to Increment this 
             int pokemonInfoCol = 1; // Maybe dont have to Increment this 
-            if (search == "")
+            if (SearchBox.Text == "")
             {
+                EmptyGrid();
                 PrintPokemons();
             }
             else
             {
+                EmptyGrid();
+                StringComparison comp = StringComparison.Ordinal;
+                string search = SearchBox.Text;
                 foreach (var pokemon in seasonOne)
                 {
                     if (pokemon.name.Contains(search))
