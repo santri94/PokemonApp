@@ -9,7 +9,7 @@
 
     <ScrollViewer>
         <Grid x:Name="Grid0">
-            <Grid x:Name="Grid2" Width="470" Height="160" VerticalAlignment="Top">
+            <Grid x:Name="Grid2" Width="470" Height="190" VerticalAlignment="Top">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20" />
                     <ColumnDefinition Width="205" />
@@ -18,14 +18,24 @@
                 </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="100"> </RowDefinition>
-                        <RowDefinition Height="25"> </RowDefinition>
-                        <RowDefinition Height="30"> </RowDefinition>
+                        <RowDefinition Height="50"> </RowDefinition>
+                        <RowDefinition Height="20"> </RowDefinition>
+                        <RowDefinition Height="20"> </RowDefinition>
                     </Grid.RowDefinitions>
                     <Image Grid.Column="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="350" Height="90" Grid.Row="0" Source="C:\Pokemon\PokemonApp\3.GIF" ></Image>
-                    <TextBox x:Name="SearchBox" FontStyle="Italic" FontWeight="DemiBold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="380" FontSize="15" PreviewTextInput="Preview"></TextBox>
-                    <Button Width="100" Height="25" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Style="{StaticResource RoundButton}" Click="Button_Click">Search</Button>
+                    <TextBox x:Name="SearchBox" Height="25" VerticalAlignment="Top" FontStyle="Italic" FontWeight="DemiBold" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Width="380" FontSize="15" PreviewTextInput="Preview"></TextBox>
+                <RadioButton x:Name="Grass" Grid.Column="1" Grid.Row="2" GroupName="type" Foreground="OrangeRed">Grass</RadioButton>
+                <RadioButton x:Name="Fire" Grid.Column="1" Grid.Row="3" GroupName="type" Foreground="OrangeRed">Fire</RadioButton>
+                <RadioButton x:Name="Water" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" GroupName="type" Foreground="OrangeRed" Margin="73,0,78,0" Width="55">Water</RadioButton>
+                <RadioButton x:Name="Normal" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" GroupName="type" Foreground="OrangeRed">Normal</RadioButton>
+                <RadioButton x:Name="Rock" Grid.Column="1" Grid.Row="2" GroupName="type" Foreground="OrangeRed" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="181,0,184,0" Width="47">Rock</RadioButton>
+                <RadioButton x:Name="Flying" Grid.Column="1" Grid.Row="3" GroupName="type" Foreground="OrangeRed" Grid.ColumnSpan="2" HorizontalAlignment="Center">Flying</RadioButton>
+                <RadioButton x:Name="Psychic" Grid.Column="2" Grid.Row="3" GroupName="type" Foreground="OrangeRed" HorizontalAlignment="Center">Psychic</RadioButton>
+                <RadioButton x:Name="Electric" Grid.Column="2" Grid.Row="2" GroupName="type" Foreground="OrangeRed" HorizontalAlignment="Center">Electric</RadioButton>
+                <RadioButton x:Name="Ice" Grid.Column="2" Grid.Row="2" GroupName="type" Foreground="OrangeRed" HorizontalAlignment="Right" Width="40">Ice</RadioButton>
+                <RadioButton x:Name="Bug" Grid.Column="2" Grid.Row="3" GroupName="type" Foreground="OrangeRed" HorizontalAlignment="Right">Bug</RadioButton>
             </Grid>
-            <Grid x:Name="Grid" Margin="0,160,0,0" >
+            <Grid x:Name="Grid" Margin="0,190,0,0" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="90" />
                     <ColumnDefinition Width="132" />

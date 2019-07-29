@@ -47,6 +47,54 @@ namespace PokemonApp
             //EmptyGrid();
         }
 
+        public string GetPokemonType()
+        {
+            string type = "";
+
+            if (Grass.IsChecked == true)
+            {
+                type = Grass.Content.ToString();
+            }
+            if (Fire.IsChecked == true)
+            {
+                type = Fire.Content.ToString();
+            }
+            if (Water.IsChecked == true)
+            {
+                type = Water.Content.ToString();
+            }
+            if (Normal.IsChecked == true)
+            {
+                type = Normal.Content.ToString();
+            }
+            if (Rock.IsChecked == true)
+            {
+                type = Rock.Content.ToString();
+            }
+            if (Flying.IsChecked == true)
+            {
+                type = Flying.Content.ToString();
+            }
+            if (Electric.IsChecked == true)
+            {
+                type = Electric.Content.ToString();
+            }
+            if (Psychic.IsChecked == true)
+            {
+                type = Psychic.Content.ToString();
+            }
+            if (Ice.IsChecked == true)
+            {
+                type = Ice.Content.ToString();
+            }
+            if (Bug.IsChecked == true)
+            {
+                type = Bug.Content.ToString();
+            }
+
+            return type;
+        }
+
         public void EmptyGrid()
         {
             var numberOfChildren = Grid.Children.Count;
@@ -114,17 +162,15 @@ namespace PokemonApp
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Preview(object sender, TextCompositionEventArgs e)
         {
             
             int row = 0; // Increment this every time u add a pokemon
             int pokemonsCol = 2; // Maybe dont have to Increment this 
-            int pokemonInfoCol = 1; // Maybe dont have to Increment this 
+            int pokemonInfoCol = 1; // Maybe dont have to Increment this
+            string type = GetPokemonType();
+            //MessageBox.Show($"Selected {GetPokemonType()}");
             if (SearchBox.Text == "")
             {
                 EmptyGrid();
@@ -133,7 +179,6 @@ namespace PokemonApp
             else
             {
                 EmptyGrid();
-                StringComparison comp = StringComparison.Ordinal;
                 string search = SearchBox.Text;
                 foreach (var pokemon in seasonOne)
                 {
